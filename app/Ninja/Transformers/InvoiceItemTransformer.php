@@ -27,7 +27,7 @@ class InvoiceItemTransformer extends EntityTransformer
     {
         return array_merge($this->getDefaults($item), [
             'id' => (int) $item->public_id,
-            'product_id' => $item->product->public_id,
+            'product_id' => !is_null($item->product) ? $item->product->public_id : null,
             'product_key' => $item->product_key,
             'updated_at' => $this->getTimestamp($item->updated_at),
             'archived_at' => $this->getTimestamp($item->deleted_at),
