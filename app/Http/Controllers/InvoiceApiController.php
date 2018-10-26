@@ -20,6 +20,7 @@ use Input;
 use Response;
 use Utils;
 use Validator;
+use function explode;
 use function filter_var;
 use const FILTER_VALIDATE_BOOLEAN;
 
@@ -66,11 +67,20 @@ class InvoiceApiController extends BaseAPIController
     {
         $invoices = Invoice::scope()
             ->with('invoice_items', 'client')
-            ->orderBy('created_at', 'desc');
+            ->orderBy('invoices.created_at', 'desc');
 
         $wantsTrashed = filter_var(request('with_trashed'), FILTER_VALIDATE_BOOLEAN);
         if ($wantsTrashed) {
             $invoices->withTrashed();
+        }
+
+        // Filter by invoice date
+        if ($startDate = Input::get('invoice_date_start')) {
+            $invoices->where('invoice_date', '>=', $startDate);
+        }
+
+        if ($endDate = Input::get('invoice_date_end')) {
+            $invoices->where('invoice_date', '<=', $endDate);
         }
 
         // Filter by invoice number
@@ -78,7 +88,7 @@ class InvoiceApiController extends BaseAPIController
             $invoices->whereInvoiceNumber($invoiceNumber);
         }
 
-        // Fllter by status
+        // Filter by status
         if ($statusId = Input::get('status_id')) {
             $invoices->where('invoice_status_id', '>=', $statusId);
         }
@@ -484,10 +494,15 @@ class InvoiceApiController extends BaseAPIController
             abort(404);
         }
 
-        $pdfString = $invoice->getPDFString();
+        $pdfString = $invoice->getPDFString(false, false);
 
         if ($pdfString) {
-            return $this->fileReponse($invoice->getFileName(), $pdfString);
+            return response()->json([
+                'data' => [
+                    'filename' => $invoice->getFileName(),
+                    'file' => $pdfString
+                ]
+            ]);
         } else {
             abort(404);
         }
