@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3b014b911bed76bdc94d497f8dfbb85d",
+    "content-hash": "c3d0d9ac7c24ed644ada7e8ad0eeae9b",
     "packages": [
         {
             "name": "abdala/omnipay-pagseguro",
@@ -2897,12 +2897,12 @@
             "version": "v0.56.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/GoogleCloudPlatform/google-cloud-php.git",
+                "url": "https://github.com/googleapis/google-cloud-php.git",
                 "reference": "7136c7e12596a3461840cac916937e24462b2ad1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GoogleCloudPlatform/google-cloud-php/zipball/7136c7e12596a3461840cac916937e24462b2ad1",
+                "url": "https://api.github.com/repos/googleapis/google-cloud-php/zipball/7136c7e12596a3461840cac916937e24462b2ad1",
                 "reference": "7136c7e12596a3461840cac916937e24462b2ad1",
                 "shasum": ""
             },
@@ -5900,12 +5900,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/omnipay-2checkout.git",
-                "reference": "b27d2823d052f5c227eeb29324bb564cfdb8f9af"
+                "reference": "453414730302ccd291930b567075fddead121102"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/omnipay-2checkout/zipball/b27d2823d052f5c227eeb29324bb564cfdb8f9af",
-                "reference": "b27d2823d052f5c227eeb29324bb564cfdb8f9af",
+                "url": "https://api.github.com/repos/thephpleague/omnipay-2checkout/zipball/453414730302ccd291930b567075fddead121102",
+                "reference": "453414730302ccd291930b567075fddead121102",
                 "shasum": ""
             },
             "require": {
@@ -5951,7 +5951,7 @@
                 "payment",
                 "twocheckout"
             ],
-            "time": "2016-03-25T10:39:58+00:00"
+            "time": "2018-05-14T08:33:28+00:00"
         },
         {
             "name": "omnipay/authorizenet",
@@ -6982,17 +6982,6 @@
         {
             "name": "omnipay/omnipay",
             "version": "2.3.x-dev",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/thephpleague/omnipay.git",
-                "reference": "cc04bd22b4149c94c52b002181d4993e4f8fe812"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/omnipay/zipball/cc04bd22b4149c94c52b002181d4993e4f8fe812",
-                "reference": "cc04bd22b4149c94c52b002181d4993e4f8fe812",
-                "shasum": ""
-            },
             "require": {
                 "omnipay/2checkout": "~2.0",
                 "omnipay/authorizenet": "~2.0",
@@ -8708,17 +8697,6 @@
         {
             "name": "roave/security-advisories",
             "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "664836e89c7ecad3dbaabc1572ea752c0d532d80"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/664836e89c7ecad3dbaabc1572ea752c0d532d80",
-                "reference": "664836e89c7ecad3dbaabc1572ea752c0d532d80",
-                "shasum": ""
-            },
             "conflict": {
                 "3f/pygmentize": "<1.2",
                 "adodb/adodb-php": "<5.20.6",
@@ -8976,6 +8954,134 @@
             "time": "2016-10-09T22:57:52+00:00"
         },
         {
+            "name": "sentry/sentry",
+            "version": "1.9.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/getsentry/sentry-php.git",
+                "reference": "6b4c80ee1f5d9d5ab5bae949f4eb5d758a0bf64b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/getsentry/sentry-php/zipball/6b4c80ee1f5d9d5ab5bae949f4eb5d758a0bf64b",
+                "reference": "6b4c80ee1f5d9d5ab5bae949f4eb5d758a0bf64b",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": "^5.3|^7.0"
+            },
+            "conflict": {
+                "raven/raven": "*"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^1.8.0",
+                "monolog/monolog": "*",
+                "phpunit/phpunit": "^4.8.35 || ^5.7"
+            },
+            "suggest": {
+                "ext-hash": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "monolog/monolog": "Automatically capture Monolog events as breadcrumbs"
+            },
+            "bin": [
+                "bin/sentry"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.10.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Raven_": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "David Cramer",
+                    "email": "dcramer@gmail.com"
+                }
+            ],
+            "description": "A PHP client for Sentry (http://getsentry.com)",
+            "homepage": "http://getsentry.com",
+            "keywords": [
+                "log",
+                "logging"
+            ],
+            "time": "2018-08-18T19:41:03+00:00"
+        },
+        {
+            "name": "sentry/sentry-laravel",
+            "version": "0.10.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/getsentry/sentry-laravel.git",
+                "reference": "bca732f2947adc9f41811bde25c54f2fd0a7e700"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/getsentry/sentry-laravel/zipball/bca732f2947adc9f41811bde25c54f2fd0a7e700",
+                "reference": "bca732f2947adc9f41811bde25c54f2fd0a7e700",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*",
+                "php": "^5.4||^7.0",
+                "sentry/sentry": "^1.9.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "2.7.*",
+                "laravel/framework": "5.7.*",
+                "orchestra/testbench": "3.7.*",
+                "phpunit/phpunit": "7.3.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.10.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Sentry\\SentryLaravel\\SentryLaravelServiceProvider"
+                    ],
+                    "aliases": {
+                        "Sentry": "Sentry\\SentryLaravel\\SentryFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Sentry\\SentryLaravel\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "David Cramer",
+                    "email": "dcramer@gmail.com"
+                }
+            ],
+            "description": "Laravel integration for Sentry (https://sentry.io)",
+            "homepage": "https://sentry.io",
+            "keywords": [
+                "errors",
+                "laravel",
+                "logging",
+                "sentry"
+            ],
+            "time": "2018-09-04T13:48:59+00:00"
+        },
+        {
             "name": "setasign/fpdi",
             "version": "1.6.2",
             "source": {
@@ -9030,12 +9136,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/simshaun/recurr.git",
-                "reference": "bff55c3baa5ab905c8f49c325daa6e9fcfccbfc1"
+                "reference": "f729bfd715f4fdf2fc2d8f400e89c9753e479c7c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/simshaun/recurr/zipball/bff55c3baa5ab905c8f49c325daa6e9fcfccbfc1",
-                "reference": "bff55c3baa5ab905c8f49c325daa6e9fcfccbfc1",
+                "url": "https://api.github.com/repos/simshaun/recurr/zipball/f729bfd715f4fdf2fc2d8f400e89c9753e479c7c",
+                "reference": "f729bfd715f4fdf2fc2d8f400e89c9753e479c7c",
                 "shasum": ""
             },
             "require": {
@@ -9077,7 +9183,7 @@
                 "recurring",
                 "rrule"
             ],
-            "time": "2018-01-17T18:53:01+00:00"
+            "time": "2018-09-19T05:26:21+00:00"
         },
         {
             "name": "sly/notification-pusher",
@@ -10941,16 +11047,6 @@
                 "php": ">=5.3.0"
             },
             "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Webpatser\\Countries\\CountriesServiceProvider"
-                    ],
-                    "aliases": {
-                        "Countries": "Webpatser\\Countries\\CountriesFacade"
-                    }
-                }
-            },
             "autoload": {
                 "psr-0": {
                     "Webpatser\\Countries": "src/"
@@ -10983,7 +11079,7 @@
                 "iso_3166_3",
                 "laravel"
             ],
-            "time": "2017-10-15T11:08:15+00:00"
+            "time": "2018-06-27T11:58:05+00:00"
         },
         {
             "name": "websight/l5-google-cloud-storage",
@@ -12231,8 +12327,7 @@
             "authors": [
                 {
                     "name": "Chris Boulton",
-                    "homepage": "http://github.com/chrisboulton",
-                    "role": "Original developer"
+                    "homepage": "http://github.com/chrisboulton"
                 }
             ],
             "description": "A comprehensive library for generating differences between two hashable objects (strings or arrays).",

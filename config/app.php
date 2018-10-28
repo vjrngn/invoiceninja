@@ -1,6 +1,8 @@
 <?php
 
 use App\Libraries\Utils;
+use Sentry\SentryLaravel\SentryFacade;
+use Sentry\SentryLaravel\SentryLaravelServiceProvider;
 
 return [
 
@@ -174,9 +176,9 @@ return [
         'App\Providers\ConfigServiceProvider',
         'App\Providers\EventServiceProvider',
         'App\Providers\RouteServiceProvider',
-
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
         'Davibennun\LaravelPushNotification\LaravelPushNotificationServiceProvider',
+        SentryLaravelServiceProvider::class,
         Laravel\Scout\ScoutServiceProvider::class,
         ScoutEngines\Elasticsearch\ElasticsearchProvider::class,
 
@@ -270,6 +272,7 @@ return [
         'Datatable' => 'Chumper\Datatable\Facades\DatatableFacade',
         'Updater' => Codedge\Updater\UpdaterFacade::class,
         'Module' => Nwidart\Modules\Facades\Module::class,
+        'Sentry' => SentryFacade::class,
 
         'Utils' => App\Libraries\Utils::class,
         'DateUtils' => App\Libraries\DateUtils::class,
